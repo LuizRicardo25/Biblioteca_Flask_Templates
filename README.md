@@ -1,156 +1,91 @@
-## Gerenciamento de Biblioteca com Flask
+# Gerenciamento de Biblioteca com Flask
 
-**Atualização**
+Este projeto é uma aplicação web Flask que permite o gerenciamento de uma coleção de livros. Os usuários podem adicionar, consultar, editar e deletar livros da biblioteca. A aplicação usa SQLite como banco de dados e inclui uma interface de usuário com templates HTML para interação fácil.
 
-Este projeto foi atualizado para incluir os campos `ano_publicacao` e `genero` no modelo `Livro`. As rotas `POST`, `GET`, `PUT` e `GET` do livro também foram modificadas para incluir os novos campos.
+## Estrutura do Projeto
 
-### Funcionalidades
+O projeto inclui os seguintes arquivos e diretórios principais:
 
-* CRUD de Livros: Crie, leia, atualize e delete livros usando a API REST.
-* Armazenamento com SQLite: Facilita o armazenamento e recuperação de dados de livros.
-* Feedback ao Usuário: Fornece respostas claras e informativas para as ações do usuário.
+- `app.py`: O arquivo principal da aplicação Flask que define rotas e lógica.
+- `templates/`: Diretório que contém os templates HTML para as páginas da aplicação.
+  - `adicionar.html`: Template para adicionar novos livros.
+  - `consultar.html`: Template para visualizar a lista de livros.
+  - `editar.html`: Template para editar os detalhes de um livro existente.
+  - `index.html`: Template que serve como a página inicial e lista todos os livros.
+- `instance/`: Diretório que contém o banco de dados SQLite da aplicação.
+- `venv/`: Diretório do ambiente virtual Python para o projeto.
+- `requirements.txt`: Lista todas as dependências necessárias para o projeto.
+- `Pipfile` e `Pipfile.lock`: Arquivos usados pelo Pipenv para gerenciar dependências.
 
-### Novas Funcionalidades
+## Funcionalidades
 
-* **Gerenciamento de Ano de Publicação:** Permite adicionar, atualizar e consultar livros por ano de publicação.
-* **Gerenciamento de Gênero:** Permite adicionar, atualizar e consultar livros por gênero.
+- **CRUD de Livros**: Crie, leia, atualize e delete informações de livros.
+- **Interface Amigável**: Utilize templates HTML para interagir com a aplicação.
+- **Armazenamento com SQLite**: Use SQLite para armazenar dados de livros de forma persistente.
 
-### Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-* Flask
-* Flask-SQLAlchemy
-* SQLite
+- Flask
+- Flask-SQLAlchemy
+- Flask-Migrate
+- HTML
+- SQLite
 
-### Como Configurar
+## Configuração e Execução
 
-#### Pré-Requisitos
+### Pré-Requisitos
 
-* Python 3.6 ou superior
-* pip
+- Python 3.6 ou superior
+- Pipenv para a gestão de dependências
 
-#### Instalação
+### Instalação
 
-1. Clone o repositório para sua máquina local:
+1. Clone o repositório:
 
-```bash
-git clone <URL do repositório>
-```
-
-2. Navegue até o diretório do projeto:
-
-```bash
-cd <nome do diretório do projeto>
-```
-
-3. Instale as dependências necessárias:
-
-```
-pip install flask flask_sqlalchemy
-```
-
-### Como Executar
-
-1. Inicie o servidor Flask executando:
-
-```
-python app.py
-```
-
-2. A aplicação agora estará rodando em http://localhost:5000/. Você pode acessar os endpoints definidos utilizando um cliente HTTP como Postman ou via curl.
-
-### Endpoints da API
-
-* **POST /livro:** Adiciona um novo livro. Exemplo de corpo da requisição: {"titulo": "Novo Livro", "autor": "Autor", "ano_publicacao": 2023, "genero": "Fantasia"}.
-* **GET /livros:** Retorna uma lista de todos os livros.
-* **GET /livro/<id>:** Retorna detalhes de um livro específico.
-* **PUT /livro/<id>:** Atualiza um livro existente. Exemplo de corpo da requisição: {"titulo": "Livro Atualizado", "autor": "Autor Atualizado", "ano_publicacao": 2024, "genero": "Ficção Científica"}.
-* **DELETE /livro/<id>:** Deleta um livro específico.
-
-
-## Gerenciamento de Biblioteca com Flask
-
-**Atualização**
-
-Este projeto foi atualizado para incluir os campos `ano_publicacao` e `genero` no modelo `Livro`. As rotas `POST`, `GET`, `PUT` e `GET` do livro também foram modificadas para incluir os novos campos.
-
-### Funcionalidades
-
-* CRUD de Livros: Crie, leia, atualize e delete livros usando a API REST.
-* Armazenamento com SQLite: Facilita o armazenamento e recuperação de dados de livros.
-* Feedback ao Usuário: Fornece respostas claras e informativas para as ações do usuário.
-
-### Novas Funcionalidades
-
-* **Gerenciamento de Ano de Publicação:** Permite adicionar, atualizar e consultar livros por ano de publicação.
-* **Gerenciamento de Gênero:** Permite adicionar, atualizar e consultar livros por gênero.
-
-### Tecnologias Utilizadas
-
-* Flask
-* Flask-SQLAlchemy
-* SQLite
-
-### Como Configurar
-
-#### Pré-Requisitos
-
-* Python 3.6 ou superior
-* pip
-
-#### Instalação
-
-1. Clone o repositório para sua máquina local:
-
-```bash
-git clone <URL do repositório>
-```
+    ```bash
+    git clone <URL do repositório>
+    ```
 
 2. Navegue até o diretório do projeto:
 
-```bash
-cd <nome do diretório do projeto>
-```
+    ```bash
+    cd ProjetoBiblioteca
+    ```
 
-3. Instale as dependências necessárias:
+3. Instale as dependências usando Pipenv:
 
-```
-pip install flask flask_sqlalchemy
-```
+    ```bash
+    pipenv install
+    ```
 
 ### Como Executar
 
-1. Inicie o servidor Flask executando:
+1. Ative o ambiente virtual:
 
-```
-python app.py
-```
+    ```bash
+    pipenv shell
+    ```
 
-2. A aplicação agora estará rodando em http://localhost:5000/. Você pode acessar os endpoints definidos utilizando um cliente HTTP como Postman ou via curl.
+2. Inicie o aplicativo Flask:
 
-### Endpoints da API
+    ```bash
+    flask run
+    ```
 
-* **POST /livro:** Adiciona um novo livro. Exemplo de corpo da requisição: {"titulo": "Novo Livro", "autor": "Autor", "ano_publicacao": 2023, "genero": "Fantasia"}.
-* **GET /livros:** Retorna uma lista de todos os livros.
-* **GET /livro/<id>:** Retorna detalhes de um livro específico.
-* **PUT /livro/<id>:** Atualiza um livro existente. Exemplo de corpo da requisição: {"titulo": "Livro Atualizado", "autor": "Autor Atualizado", "ano_publicacao": 2024, "genero": "Ficção Científica"}.
-* **DELETE /livro/<id>:** Deleta um livro específico.
+3. Acesse a aplicação em `http://localhost:5000/`.
 
-### Contribuindo
+## API Endpoints
 
-Contribuições são muito bem-vindas! Por favor, leia o CONTRIBUTING.md para mais detalhes sobre nosso código de conduta, e o processo para enviar pedidos de pull.
+- **POST /adicionar**: Adiciona um novo livro.
+- **GET /consultar**: Lista todos os livros.
+- **GET /editar/<id>**: Mostra o formulário de edição para um livro.
+- **POST /editar/<id>**: Submete as alterações de um livro.
+- **GET /deletar/<id>**: Deleta um livro.
 
-### Licença
+## Contribuição
 
-Este projeto é licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
+Contribuições são bem-vindas! Consulte `CONTRIBUTING.md` para obter diretrizes sobre como contribuir para o projeto.
 
+## Licença
 
-
-
-
-### Contribuindo
-
-Contribuições são muito bem-vindas! Por favor, leia o CONTRIBUTING.md para mais detalhes sobre nosso código de conduta, e o processo para enviar pedidos de pull.
-
-### Licença
-
-Este projeto é licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
+Este projeto é distribuído sob a Licença MIT, conforme detalhado no arquivo `LICENSE.md`.
