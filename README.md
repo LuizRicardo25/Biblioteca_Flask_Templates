@@ -52,10 +52,14 @@ O projeto inclui os seguintes arquivos e diretórios principais:
     cd ProjetoBiblioteca
     ```
 
-3. Instale as dependências usando Pipenv:
+3. Instalando ambiente virtual e dependências:
 
     ```bash
-    pipenv install
+    python -m venv venv 
+    venv\Scripts\activate
+    pip install flask flask_sqlalchemy flask_migrate
+    set FLASK_APP=app.py //caso dê algum problema
+    
     ```
 
 ### Como Executar
@@ -63,14 +67,10 @@ O projeto inclui os seguintes arquivos e diretórios principais:
 1. Ative o ambiente virtual:
 
     ```bash
-    pipenv shell
+    python app.py
+
     ```
 
-2. Inicie o aplicativo Flask:
-
-    ```bash
-    flask run
-    ```
 
 3. Acesse a aplicação em `http://localhost:5000/`.
 
